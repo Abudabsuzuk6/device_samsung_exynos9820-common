@@ -81,9 +81,9 @@ TARGET_KEYMASTER_VARIANT := samsung
 ## Manifest
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
-    $(COMMON_PATH)/device_framework_matrix.xml
-DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest.xml
-DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
+    $(COMMON_PATH)/configs/vintf/device_framework_matrix.xml
+DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/vintf/manifest.xml
+DEVICE_MATRIX_FILE := $(COMMON_PATH)/configs/vintf/compatibility_matrix.xml
 
 ## Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 57671680
@@ -114,8 +114,8 @@ TARGET_SOC := exynos9820
 include hardware/samsung_slsi-linaro/config/BoardConfig9820.mk
 
 ## Properties
-TARGET_PRODUCT_PROP += $(COMMON_PATH)/product.prop
-TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
+TARGET_PRODUCT_PROP += $(COMMON_PATH)/configs/props/product.prop
+TARGET_VENDOR_PROP += $(COMMON_PATH)/configs/props/vendor.prop
 
 ## Recovery
 BOARD_INCLUDE_RECOVERY_DTBO := true
@@ -124,7 +124,7 @@ TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
 TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_exynos9820
 
 ## Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)/releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)/configs/releasetools
 
 ## RIL
 ENABLE_VENDOR_RIL_SERVICE := true
@@ -134,7 +134,7 @@ VENDOR_SECURITY_PATCH := 2023-01-01
 
 ## SELinux
 BOARD_SEPOLICY_TEE_FLAVOR := teegris
-include device/lineage/sepolicy/exynos/sepolicy.mk
+include device/voltage/sepolicy/exynos/sepolicy.mk
 include device/samsung_slsi/sepolicy/sepolicy.mk
 
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
