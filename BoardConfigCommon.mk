@@ -138,6 +138,7 @@ include device/voltage/sepolicy/exynos/sepolicy.mk
 include device/samsung_slsi/sepolicy/sepolicy.mk
 
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
+SELINUX_IGNORE_NEVERALLOWS := true
 
 ## Verified Boot
 BOARD_AVB_ENABLE := true
