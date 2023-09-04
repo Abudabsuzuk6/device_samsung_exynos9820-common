@@ -76,6 +76,9 @@ TARGET_USERIMAGES_USE_EXT4 := true
 ## Kernel
 BOARD_KERNEL_IMAGE_NAME := Image
 TARGET_KERNEL_SOURCE := kernel/samsung/exynos9820
+TARGET_KERNEL_CLANG_VERSION := trb_clang
+TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/$(TARGET_KERNEL_CLANG_VERSION)
+TARGET_KERNEL_ADDITIONAL_FLAGS := AS=llvm-as AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip
 
 ## Keymaster
 TARGET_KEYMASTER_VARIANT := samsung
